@@ -72,6 +72,9 @@ collections:
   logs:
     output: true
     permalink: /log/:title
+  blogs:
+    output: true
+    permalink: /blog/:title
 
 
 markdown: kramdown
@@ -102,11 +105,19 @@ defaults:
       content-type: notes
   - scope:
       path: ""
+      type: blogs
+    values:
+      layout: Blog
+      permalink: /blog/:title
+      content-type: blogs
+  - scope:
+      path: ""
       type: logs
     values:
       layout: Log
       permalink: /log/:title
       content-type: logs
+
 
 
 # Exclude from processing.
@@ -131,4 +142,3 @@ exclude:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-

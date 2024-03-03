@@ -1,0 +1,32 @@
+{% assign filter_category = include.category | replace: "[[", ""  | replace: "]]", ""   %}
+<div class="list-div container-div">
+{% assign note_items = site.logs | sort: "date" | reverse %}
+{% assign previous_month_year = "" %}
+{% for note_item in note_items %}
+
+    
+    {%- if note_item.feed == "show"  -%}
+    {% assign cat = note_item.category | replace: "[[", ""  | replace: "]]", "" | replace: '"', '' %}
+    {% if cat == filter_category %}
+
+        {% assign current_month_year = note_item.date | date: "%B %Y" %}
+        {% if current_month_year != previous_month_year %}
+            <div class="list-head-div">
+                <h2 class="list-head">
+                    {{current_month_year}}
+                </h2>
+            </div>
+            {% assign previous_month_year = current_month_year %}
+        {% endif %}
+            <a href="{{ site.baseurl }}{{ note_item.url }}">
+                <div class="list-components p-s">
+                    <p class="list-title">
+                        {{ note_item.title }}
+                    </p>
+                </div>
+            </a>
+    {%- endif -%}
+    {% endif %}
+{%- endfor -%}
+</div>
+

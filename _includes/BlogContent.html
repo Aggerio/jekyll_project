@@ -115,27 +115,7 @@
             {%- assign bracket_link = '[[' | append: title | append: external_link_delimiter | append: url | append: ']]' -%}
             {%- assign replaced_content = replaced_content | replace: bracket_link,link_text -%}
         {%- endfor -%}
-
-        <div class="log-desktop log-div">
-            {% if page['meta-cover'] %}
-          <div class="log-image">
-            {% assign image_link = page['meta-cover'] | replace: '[[', '' | replace: ']]', '' %}
-            <img src="../assets/img/{{image_link}}" />
-          </div>
-          {% endif %}
-          <div class="log-information">
-            <h1 class="log-title">{{page['title']}}</h1>
-            <p class="log-details p-s">{{page['category'] | replace: "[[", "" | replace: "]]", "" | replace: '"', ''}}• {{page['meta-language']}}• {{page['meta-year']}}•</p>
-            <p class="log-details p-s">
-              Paul Lynch •
-              <span class="span-highlight"> Oneworld Publications</span>
-            </p>
-            <p class="log-date p-s">18 Dec 2022</p>
-            <p class="log-text p-l">
-                    {{ replaced_content }}
-            </p>
-          </div>
-        </div>
+        {{ replaced_content }}
     {%- else -%}
         {{content}}
     {%- endif -%}

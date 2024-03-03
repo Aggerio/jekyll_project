@@ -22,6 +22,7 @@ services:
       - ./pages:/usr/src/app/pages
       - ./_config.yml:/usr/src/app/_config.yml
       - ./_logs:/usr/src/app/_logs
+      - ./_blogs:/usr/src/app/_blogs
     environment:
       CHOKIDAR_USEPOLLING: "true"
     ports:

@@ -1,27 +1,49 @@
-{%- if page.feedformat == "card" -%} 
+<span>
+Here's a compilation of books I've read. The ones marked with ♦ are must-reads, and those marked with 0 are re-reads. Check my Antilibrary for the bigger list ;) 
+<br />
+<a href="/log/library" >Library</a>,
+<a href="/log/antilibrary" >AntiLibrary</a>,
+<a href="/log/movies" >Movies</a>,
+<a href="/log/series" >Series</a>, 
+<a href="/log/podcasts" >Podcasts</a>,
+<a href="/log/music" >Music</a>,    
+<a href="/log/travel" >Travel</a>,  
+<a href="/log/photography" >Photography</a>,
+<a href="/log/recipe" >Recipe</a>, 
+<a href="/log/coffee" >Coffee</a>, 
+<a href="/log/webfound" >WebFound</a>,
+<a href="/log/softwares" >Softwares</a>,
+<a href="/log/using" >Using</a>,    
+<a href="/log/figma-plugins" >Figma Plugins</a>,
+<a href="/log/tinyhouses" >TinyHouses</a>,
+<a href="/log/designers" >Designers  </a>
+</span>
 
-<div class="list-div container-div">
-  {% assign logs_items = site.logs| sort: "date" | reverse %} 
-  {% assign start = false %}
-  {% assign first_item = logs_items | first  %}
-  {% assign current_year = first_item.date | date: "%Y"%}
-  {% for log_item in logs_items}
-    {% assign new_year = (log_item.date | date: "%Y") %}
-    {% if start == false or current_year != (log_item.date | date: "%Y") %}
-
-    {% assign current_year = (log_item.date | date: "%Y") %}
-    <div class="list-head-div">
-      <h2 class="list-head">{{current_year}} </h2>
+{%- if page.feedformat == "card" -%}
+    <div class="list-div container-div">
+    {% assign note_items = site.logs | sort: "date" | reverse %}
+    {% assign previous_month_year = "" %}
+    {% for note_item in note_items %}
+        
+        {%- if note_item.feed == "show" -%}
+        {% assign current_month_year = note_item.date | date: "%B %Y" %}
+        {% if current_month_year != previous_month_year %}
+            <div class="list-head-div">
+                <h2 class="list-head">
+                    {{current_month_year}}
+                </h2>
+            </div>
+            {% assign previous_month_year = current_month_year %}
+        {% endif %}
+            <a href="{{ site.baseurl }}{{ note_item.url }}">
+                <div class="list-components p-s">
+                    <p class="list-title">
+                        {{ note_item.title }}
+                    </p>
+                    <p class="list-date">{{note_item['category'] | replace: '[[', '' | replace: ']]', '' | replace: '"','' }}</p>
+                </div>
+            </a>
+        {%- endif -%}
+    {%- endfor -%}
     </div>
-    {% assign start = true %}
-    {% endif %}
-    <a href="{{site.baseurl}}{{log_item.url}}">
-    <div class="list-components p-s">
-      <p class="list-title">{{log_item.title}}</p>
-      <p class="list-date">{{ log_item.date | date: "%d %B %Y" }}</p>
-    </div>
-    </a>
-</div>
-</div>
-{% endfor %}
-{%-endif -%}
+{%- endif -%}
