@@ -1,0 +1,28 @@
+version: "3"
+
+networks:
+  jekyll:
+    external: false
+
+services:
+  garden:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jekyll
+    restart: always
+    networks:
+      - jekyll
+    volumes:
+      - ./_posts:/usr/src/app/_posts
+      - ./_notes:/usr/src/app/_notes
+      - ./_includes:/usr/src/app/_includes
+      - ./_layouts:/usr/src/app/_layouts
+      - ./assets:/usr/src/app/assets
+      - ./pages:/usr/src/app/pages
+      - ./_config.yml:/usr/src/app/_config.yml
+      - ./_logs:/usr/src/app/_logs
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    ports:
+      - "4000:4000"

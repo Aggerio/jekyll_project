@@ -1,0 +1,24 @@
+<div class="work-div container-div">
+
+  {% assign image_src1 = include.image_src1 %} 
+  {% assign image_src2 = include.image_src2 %} 
+  {% assign title1 = include.title1 %} 
+  {% assign title2 = include.title2 %}
+  {% assign date1 = include.date1 %} 
+  {% assign date2 = include.date2 %}
+  <div class="work-row p-l" style="width:50%">
+    <img src="{{image_src1 }}" />
+    <div class="work-caption">
+      <p class="work-title">Chali Machine</p>
+      <p class="work-date">{{date1}}</p>
+    </div>
+  </div>
+  <div class="work-row p-l" style="width:50%">
+    <img src="{{image_src2 }}" />
+    <div class="work-caption">
+      <p class="work-title">{{title2}} </p>
+      <p class="work-date">{{date2}}</p>
+    </div>
+  </div>
+</div>
+

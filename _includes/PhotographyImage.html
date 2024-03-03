@@ -1,0 +1,22 @@
+
+<div class="container-div project">
+  {% assign image_src1 = include.image_src1 %} 
+  {% assign image_src2 = include.image_src2 %} 
+  {% assign alt1 = include.alt1 %} 
+  {% assign alt2 = include.alt2 %}
+
+
+  <div class="image-container">
+    <img class="image-project" src="{{ image_src1}}" alt="{{ alt1 }}" />
+    <div class="image-overlay p-s">{{alt1}} </div>
+  </div>
+
+  <div class="image-container">
+    <img class="image-project" src="{{ image_src2}}" alt="{{ alt2 }}" />
+    <div class="image-overlay p-s">{{alt2}} </div>
+  </div>
+  <!-- <p float="left" style="align-items: center;">
+   <img src="{{ image_src1}}" width="49.7%" alt="{{ alt1 }}" > 
+   <img src="{{ image_src2}}" width="49.7%" alt = "{{ alt 2}}"> 
+  </p> -->
+</div>

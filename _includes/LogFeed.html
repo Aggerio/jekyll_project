@@ -1,0 +1,27 @@
+{%- if page.feedformat == "card" -%} 
+
+<div class="list-div container-div">
+  {% assign logs_items = site.logs| sort: "date" | reverse %} 
+  {% assign start = false %}
+  {% assign first_item = logs_items | first  %}
+  {% assign current_year = first_item.date | date: "%Y"%}
+  {% for log_item in logs_items}
+    {% assign new_year = (log_item.date | date: "%Y") %}
+    {% if start == false or current_year != (log_item.date | date: "%Y") %}
+
+    {% assign current_year = (log_item.date | date: "%Y") %}
+    <div class="list-head-div">
+      <h2 class="list-head">{{current_year}} </h2>
+    </div>
+    {% assign start = true %}
+    {% endif %}
+    <a href="{{site.baseurl}}{{log_item.url}}">
+    <div class="list-components p-s">
+      <p class="list-title">{{log_item.title}}</p>
+      <p class="list-date">{{ log_item.date | date: "%d %B %Y" }}</p>
+    </div>
+    </a>
+</div>
+</div>
+{% endfor %}
+{%-endif -%}
