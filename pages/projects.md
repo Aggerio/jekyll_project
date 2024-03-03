@@ -9,14 +9,14 @@ List of projects I've worked on (and continue to work on )
 
 <br />
 
-{% include ProjectImage.html  image_src1="/assets/img/profile_image.png" image_src2="/assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
+{% include ProjectImage.html  image_src1="./assets/img/profile_image.png" image_src2="./assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
 <br />
 
-{% include ProjectImage.html  image_src1="/assets/img/profile_image.png" image_src2="/assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
+{% include ProjectImage.html  image_src1="./assets/img/profile_image.png" image_src2="./assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
 
-{% include ProjectImage.html  image_src1="/assets/img/profile_image.png" image_src2="/assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
+{% include ProjectImage.html  image_src1="./assets/img/profile_image.png" image_src2="./assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
 
-{% include ProjectImage.html  image_src1="/assets/img/profile_image.png" title1="Profile Image" date1="2017-2019"  %}
+{% include ProjectImage.html  image_src1="./assets/img/profile_image.png" title1="Profile Image" date1="2017-2019"  %}
 <br />
 <br />
 
@@ -26,11 +26,11 @@ I prefer not to refer to them as case studies, as these are informal and persona
  <br />
  <br />
 
-{% include ProjectImage.html  image_src1="/assets/img/profile_image.png" image_src2="/assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
+{% include ProjectImage.html  image_src1="./assets/img/profile_image.png" image_src2="./assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
 
-{% include ProjectImage.html  image_src1="/assets/img/profile_image.png" image_src2="/assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
+{% include ProjectImage.html  image_src1="./assets/img/profile_image.png" image_src2="./assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
 
-{% include ProjectImage.html  image_src1="/assets/img/profile_image.png" image_src2="/assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
+{% include ProjectImage.html  image_src1="./assets/img/profile_image.png" image_src2="./assets/img/profile_image.png" title1="Profile Image" title2="Profile Image" date1="2017-2019" date2="2017-2019" %}
 
 
 # Identity and Branding
@@ -38,9 +38,9 @@ I prefer not to refer to them as case studies, as these are informal and persona
  <br />
  <br />
 
-{% include PhotographyImage.html  image_src1="/assets/img/profile_image.png" image_src2="/assets/img/profile_image.png" alt1="Profile Image" alt2="Profile Image" date1="2017-2019" date2="2017-2019" %}
+{% include PhotographyImage.html  image_src1="./assets/img/profile_image.png" image_src2="./assets/img/profile_image.png" alt1="Profile Image" alt2="Profile Image" date1="2017-2019" date2="2017-2019" %}
 
-{% include PhotographyImage.html  image_src1="/assets/img/profile_image.png" image_src2="/assets/img/profile_image.png" alt1="Profile Image" alt2="Profile Image" date1="2017-2019" date2="2017-2019" %}
+{% include PhotographyImage.html  image_src1="./assets/img/profile_image.png" image_src2="./assets/img/profile_image.png" alt1="Profile Image" alt2="Profile Image" date1="2017-2019" date2="2017-2019" %}
 
 
-{% include PhotographyImage.html  image_src1="/assets/img/profile_image.png" image_src2="/assets/img/profile_image.png" alt1="Profile Image" alt2="Profile Image" date1="2017-2019" date2="2017-2019" %}
+{% include PhotographyImage.html  image_src1="./assets/img/profile_image.png" image_src2="./assets/img/profile_image.png" alt1="Profile Image" alt2="Profile Image" date1="2017-2019" date2="2017-2019" %}
