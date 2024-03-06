@@ -1,11 +1,10 @@
 ---
 layout: Project
 title: Projects
-feedformat: projects
+feedformat: card
 permalink: /projects
 ---
 
-List of projects I've worked on (and continue to work on )
 
 <br />
 

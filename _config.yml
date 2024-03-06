@@ -66,6 +66,9 @@ plugins:
 ## Enable Collections
 ## Suggested collects are "notes" "lists" and "blog"
 collections:
+  projects:
+    output: true
+    permalink: /project/:title
   notes:
     output: true
     permalink: /note/:title
@@ -75,8 +78,7 @@ collections:
   blogs:
     output: true
     permalink: /blog/:title
-
-
+  
 markdown: kramdown
 
 kramdown:
@@ -117,8 +119,13 @@ defaults:
       layout: Log
       permalink: /log/:title
       content-type: logs
-
-
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: Project
+      permalink: /project/:title
+      content-type: projects
 
 # Exclude from processing.
 # The following items will not be processed, by default.

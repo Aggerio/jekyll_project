@@ -16,13 +16,14 @@ services:
     volumes:
       - ./_posts:/usr/src/app/_posts
       - ./_notes:/usr/src/app/_notes
+      - ./_projects:/usr/src/app/_projects
       - ./_includes:/usr/src/app/_includes
       - ./_layouts:/usr/src/app/_layouts
       - ./assets:/usr/src/app/assets
       - ./pages:/usr/src/app/pages
-      - ./_config.yml:/usr/src/app/_config.yml
       - ./_logs:/usr/src/app/_logs
       - ./_blogs:/usr/src/app/_blogs
+      - ./_config.yml:/usr/src/app/_config.yml
     environment:
       CHOKIDAR_USEPOLLING: "true"
     ports:

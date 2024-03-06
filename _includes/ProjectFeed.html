@@ -1,0 +1,30 @@
+
+{%- if page.feedformat == "card" -%}
+
+{% assign projects_items = site.projects| sort: "date" | reverse %}
+<br>
+<br>
+<p>List of projects I've worked on (and continue to work on )</p>
+<br/>
+    {% assign worked_on = '' | split: ','%}
+    {% assign work_projects = '' | split: ','%}
+    {% assign identity_branding = '' | split: ','%}
+    {% assign step = 2 %}
+
+    {% assign j = 0 %}
+
+    {% for i in (0..projects_items.size) %}
+      {% if j < projects_items.size  %}
+
+        {% assign project = projects_items[i] %}
+        {% if project.feed == "show" and project.category == "[[Worked-On]]"%}
+{% assign clean_image_src = project.metacover | replace: "[[", "" | replace: "]]", "" %}
+{% assign clean_image_src = './assets/img/' | append: clean_image_src %}
+{% include ProjectImage.html  image_src1=clean_image_src  title1=project.title  date1=project.duration  %}
+
+        {% endif %}
+        {% assign j = j | plus: step %}
+      {% endif %}
+    {% endfor %}
+
+{% endif %}

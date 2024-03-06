@@ -60,8 +60,8 @@
                     {%- include LogFeed.html -%}
             {%- endif -%}
 
-            <!--- Notes Layout-->
-            {%- if page.content-type == "logs" and !page.category -%}
+            <!--- Logs Layout-->
+            {%- if page.content-type == "logs" and page.category != undefined -%}
             <div class="column is-5-widescreen  is-6-desktop is-8-tablet is-12-mobile">
                     <div class="note-page-section">
                         <div>
