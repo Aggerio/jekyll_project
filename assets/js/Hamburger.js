@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+const iconSun = "/assets/img/sun.png";
+const iconMoon = "/assets/img/moon.svg";
+const iconLogoLight = "/assets/img/logolight.png";
+const iconLogoDark = "/assets/img/logodark.png";
+
+function changeIconImgSrc(src, src2) {
+	document.getElementById("theme-toggle-logo").src = src2;
+	document.getElementById("theme-toggle-img").src = src;
+	document.getElementById("theme-toggle-img--mobile").src = src;
+}
+
 // Get all "navbar-burger" elements
 const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 // Check if there are any navbar burgers
@@ -38,5 +49,42 @@ $navbarBurgers.forEach( el => {
     });
     contentParagraph.innerHTML = wrappedContent.join(", ");
 
+    function modeSwitcher() {
+        let theme = sessionStorage.getItem('theme');
+        if (theme === "dark") {
+            document.documentElement.setAttribute('data-theme', 'light');
+            sessionStorage.setItem('theme', 'light');
+            changeIconImgSrc(iconSun,iconLogoLight );
+            // changeLogoImgSrc(iconLogoLight);
+        }	else if (theme === "light") {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            sessionStorage.setItem('theme', 'dark');
+            changeIconImgSrc(iconMoon,iconLogoDark);
+            // changeLogoImgSrc(iconLogoDark);
+        } else if (systemInitiatedDark.matches) {	
+            document.documentElement.setAttribute('data-theme', 'light');
+            sessionStorage.setItem('theme', 'light');
+            changeIconImgSrc(iconSun,iconLogoLight );
+            // changeLogoImgSrc(iconLogoLight);
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            sessionStorage.setItem('theme', 'dark');
+            changeIconImgSrc(iconMoon,iconLogoDark);
+            // changeLogoImgSrc(iconLogoDark);
+        }
+    }
+
+    
+    let theme = sessionStorage.getItem('theme');
+    if (theme==="") {
+        document.documentElement.setAttribute('data-theme', 'light');
+        changeIconImgSrc(iconSun,iconLogoLight );
+    } else if (theme==="dark") {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        changeIconImgSrc(iconMoon,iconLogoDark);
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        changeIconImgSrc(iconSun,iconLogoLight );
+    }
 
 });

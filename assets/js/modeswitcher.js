@@ -49,7 +49,6 @@ function prefersColorTest(systemInitiatedDark) {
 }
 systemInitiatedDark.addListener(prefersColorTest);
 
-
 function modeSwitcher() {
 	let theme = sessionStorage.getItem('theme');
 	if (theme === "dark") {
