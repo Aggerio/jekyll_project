@@ -84,7 +84,7 @@
       type="application/rss+xml"
       href="{{ site.url }}/feed.xml"
     />
-    <script src="./assets/js/util.js"></script>
+    <script src="{{site.baseurl}}/assets/js/util.js"></script>
   </head>
 
   <body>
@@ -100,6 +100,7 @@
                     <h2 class="title-header">{{page.title}}</h2>
                     <div class="paragraph">
                     {%- include ProjectFeed.html -%}
+                    {% include Footer.html %}
                     </div>
             {%- endif -%}
 
@@ -128,6 +129,7 @@
                     <div class="paragraph">
                       {%- include ProjectContent.html -%}
                       {%- include Backlinks.html -%}
+                      {% include Footer.html %}
                     </div>
                     </div>
             </div>

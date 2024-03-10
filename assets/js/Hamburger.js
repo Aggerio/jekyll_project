@@ -41,7 +41,6 @@ $navbarBurgers.forEach( el => {
     document
       .querySelector(".hamburger")
       .addEventListener("click", function () {
-        console.log("hamburger clicked");
         var menu = document.querySelector(".menu");
         if (menu.style.display === "none" || menu.style.display === "") {
           menu.style.display = "block";

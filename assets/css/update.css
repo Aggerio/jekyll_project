@@ -900,11 +900,10 @@ body{
   margin-top: 0.5em; }
 
 /* =================== */
-.logo-img{
-    width: 25px;
-    height: 30px;
-}
 
+a{
+  text-decoration: none;
+}
 /* Hidden link css: Tooltip */
 .tooltip {
     display: inline;
@@ -1021,4 +1020,8 @@ body{
 .related-title {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.meta-title{
+  text-decoration-line: none;
 }
