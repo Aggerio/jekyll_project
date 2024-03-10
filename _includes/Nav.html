@@ -16,79 +16,37 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE * SOFTWARE. * * File: Nav.html *
 Author Raghuveer S, Hiran Venugopalan * * This file contains the markup for the
 context menu thingy you see when you right * click on the post titles on the
 home page. * {%- endcomment -%}
-<nav
-  class="navbar is-transparent header container-div"
-  role="navigation"
-  aria-label="main navigation"
->
-  <!-- <div class="section"> -->
-  <div href="{{ site.baseurl }}/index.html">
-    <a  href="{{site.baseurl}}/index.html">
-      <img
-        class="logo-img header-item logo"
-        src="{{ site.baseurl }}/assets/img/logo.png"
-      />
+
+<div class="header container-div">
+  <script src="{{ site.baseurl }}/assets/js/modeswitcher.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/Hamburger.js"></script>
+  <div class="logo-div">
+    <a href="{{'/' | relative_url }}">
+    <img src="{{ site.baseurl }}/assets/img/logo.png" class="header-item logo-img" width="50" height="50" />
     </a>
-    <script src="{{ site.baseurl }}/assets/js/modeswitcher.js"></script>
-    <script src="{{ site.baseurl }}/assets/js/Hamburger.js"></script>
-    <div
-      class="navbar-item navbar-dark-mode__mobile is-hidden-tablet"
-      onclick="modeSwitcher()"
-    >
-      <div class="buttons">
-        <a class="button is-text">
-          <span class="icon is-small">
-            <img
-              src="{{ '/assets/img/sun.svg' | relative_url }}"
-              id="theme-toggle-img--mobile"
-            />
-          </span>
-        </a>
-      </div>
-    </div>
-    <a
-      role="button"
-      class="navbar-burger"
-      aria-label="menu"
-      aria-expanded="false"
-      data-target="navbarBasicExample"
-    >
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+    <img
+      src="{{site.baseurl}} /assets/img/Hamburger_icon.svg.png"
+      class="header-item p-s hamburger"
+      id="header-item"
+    />
+  </div>
+  <div class="menu">
+
+    <a href="{{'/notes' | relative_url}}" class="header-item navbar-item p-s">
+        <p class="header-item p-s">Notes</p>
     </a>
+    <a href="{{'/logs' | relative_url}}" class="header-item navbar-item p-s">
+      <p class="header-item p-s">Logs</p>
+    </a>
+    <a href="{{'/projects' | relative_url}}" class="header-item navbar-item">
+      <p class="header-item p-s">Projects</p>
+    </a>
+    <a href="{{'/about' | relative_url }}" class="header-item navbar-item p-s">
+    <p class="header-item p-s">About</p>
+     </a>
+      <img src="{{ '/assets/img/sun.svg' | relative_url }}" id="theme-toggle-img" onclick="modeSwitcher()"/>
   </div>
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="menu navbar-start">
-      <a href="{{'/notes' | relative_url}}" class="header-item navbar-item p-s"
-        >Notes</a
-      >
-      <a href="{{'/logs' | relative_url}}" class="header-item navbar-item p-s"
-        >Logs</a
-      >
-      <a
-        href="{{ '/projects' | relative_url}}"
-        class="header-item navbar-item p-s"
-        >Projects</a
-      >
-      <a href="{{'/about' | relative_url }}" class="header-item navbar-item p-s"
-        >About</a
-      >
-    </div>
-    <div class="navbar-end is-hidden-mobile" onclick="modeSwitcher()">
-      <div class="navbar-item">
-        <div class="buttons">
-          <a class="button is-text">
-            <span class="icon is-small">
-              <img
-                src="{{ '/assets/img/sun.svg' | relative_url }}"
-                id="theme-toggle-img"
-              />
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- </div> -->
-</nav>
+</div>
+
+
+

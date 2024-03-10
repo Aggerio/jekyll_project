@@ -37,4 +37,16 @@ $navbarBurgers.forEach( el => {
         return "<a href='#' class='connect-link p-l'>" + element + "</a>";
     });
     contentParagraph.innerHTML = wrappedContent.join(", ");
+
+    document
+      .querySelector(".hamburger")
+      .addEventListener("click", function () {
+        console.log("hamburger clicked");
+        var menu = document.querySelector(".menu");
+        if (menu.style.display === "none" || menu.style.display === "") {
+          menu.style.display = "block";
+        } else {
+          menu.style.display = "none";
+        }
+      });
 });
