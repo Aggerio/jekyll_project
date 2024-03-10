@@ -46,7 +46,7 @@
             {% assign title2 = project2.title %}
             {% assign date1 = project1.duration %} 
             {% assign date2 = project2.duration %}
-            <div class="work-row p-l" style="width:50%">
+            <div class="work-row p-l">
                 <a href="{{site.baseurl}}{{project1.url}}">
                     <img src="{{ image_src1 }}" />
                     <div class="work-caption">
@@ -56,7 +56,7 @@
                 </a>
             </div>
             {% if idx1 != worked_on[worked_on.size()] - 1 and idx2 != 0 %}
-                <div class="work-row p-l" style="width:50%">
+                <div class="work-row p-l">
                 <a href="{{site.baseurl}}{{project2.url}}">
                     <img src="{{ image_src2 }}" />
                     <div class="work-caption">
@@ -87,8 +87,7 @@
             {% assign title2 = project2.title %}
             {% assign date1 = project1.duration %} 
             {% assign date2 = project2.duration %}
-            <div class="work-row p-l" style="width:50%">
-
+            <div class="work-row p-l">
                 <a href="{{site.baseurl}}{{project1.url}}">
                 <img src="{{ image_src1 }}" />
                 <div class="work-caption">
@@ -98,7 +97,7 @@
                 </a>
             </div>
             {% if idx1 != work_projects[work_projects.size()] - 1 and idx2 != 0 %}
-                <div class="work-row p-l" style="width:50%">
+                <div class="work-row p-l">
                 <a href="{{site.baseurl}}{{project2.url}}">
                     <img src="{{ image_src2 }}" />
                     <div class="work-caption">
@@ -132,7 +131,7 @@
             {% assign title2 = project2.title %}
             {% assign date1 = project1.duration %} 
             {% assign date2 = project2.duration %}
-            <div class="image-container" style="width:50%">
+            <div class="image-container">
 
                 <a href="{{site.baseurl}}{{project1.url}}">
                 <img class="image-project" src="{{ image_src1 }}" />
@@ -143,7 +142,7 @@
             </div>
 
             {% if idx1 != identity_branding[identity_branding.size()] - 1 and idx2 != 0 %}
-                <div class="image-container" style="width:50%">
+                <div class="image-container">
                 <a href="{{site.baseurl}}{{project2.url}}">
                     <img class="image-project" src="{{ image_src2 }}" />
                     <div class="image-overlay p-s">

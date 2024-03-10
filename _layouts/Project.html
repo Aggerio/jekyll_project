@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Hiran Venugopalan" property="og:site_name" />
@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;700&family=Public+Sans:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     {%- if page.title -%}
@@ -84,7 +84,6 @@
       type="application/rss+xml"
       href="{{ site.url }}/feed.xml"
     />
-    <script src="{{site.baseurl}}/assets/js/util.js"></script>
   </head>
 
   <body>
@@ -99,7 +98,164 @@
                 <h5 class="meta-title"><a href="/">← </a></h5>
                     <h2 class="title-header">{{page.title}}</h2>
                     <div class="paragraph">
-                    {%- include ProjectFeed.html -%}
+                      {%- if page.feedformat == "card" -%}
+
+                      {% assign projects_items = site.projects | sort: "date" | reverse %}
+
+                         <p> List of projects I've worked on (and continue to work on )</p>
+                      {% assign worked_on = '' %}
+                      {% assign identity_branding = '' %}
+                      {% assign work_projects = '' %}
+                      
+                      {% for i in (0..projects_items.size) %}
+                          {% assign project = projects_items[i] %}
+                          {% if project.feed == "show" %} 
+                              {% if project.category == "[[Worked-On]]" %}
+                                  {% assign worked_on = worked_on | append: i | append: ',' %}
+                              {% endif %}
+                              {% if project.category == "[[Identity-Branding]]" %}
+                                  {% assign identity_branding = identity_branding | append: i | append: ',' %}
+                              {% endif %}
+                              {% if project.category == "[[Work-Projects]]" %}
+                                  {% assign work_projects = work_projects | append: i | append: ',' %}
+                              {% endif %}
+                          {% endif %}
+                      {% endfor %}
+                      
+                      {% assign worked_on = worked_on | |  split: ',' %}
+                      {% assign identity_branding = identity_branding | split: ',' %}
+                      {% assign work_projects = work_projects | split: ',' %}
+                      
+                      {% assign step = 2 %}
+                      {% assign j = 0 %}
+                      
+                      {% for i in (0..worked_on.size) %}
+                          {% if j < worked_on.size %}
+                              {% assign idx1 = worked_on[j] | plus: 0 %}
+                              {% assign idx2 = j | plus: 0 | plus: 1 %}
+                              {% assign idx2 = worked_on[idx2] | plus: 0 %}
+                      
+                              {% assign project1 = projects_items[idx1] %}
+                              {% assign project2 = projects_items[idx2] %}
+                              <div class="work-div container-div">
+                                  {% assign image_src1 = './assets/img/' | append: project1.metacover | replace: '[[', '' | replace: ']]', ''  %} 
+                                  {% assign image_src2 = './assets/img/' | append: project2.metacover | replace: '[[', '' | replace: ']]', ''  %} 
+                                  {% assign title1 = project1.title %} 
+                                  {% assign title2 = project2.title %}
+                                  {% assign date1 = project1.duration %} 
+                                  {% assign date2 = project2.duration %}
+                                  <div class="work-row p-l">
+                                      <a href="{{site.baseurl}}{{project1.url}}">
+                                          <img src="{{ image_src1 }}" />
+                                          <div class="work-caption">
+                                              <p class="work-title">{{ title1 }}</p>
+                                              <p class="work-date">{{ date1 }}</p>
+                                          </div>
+                                      </a>
+                                  </div>
+                                  {% if idx1 != worked_on[worked_on.size()] - 1 and idx2 != 0 %}
+                                      <div class="work-row p-l">
+                                      <a href="{{site.baseurl}}{{project2.url}}">
+                                          <img src="{{ image_src2 }}" />
+                                          <div class="work-caption">
+                                              <p class="work-title">{{ title2 }} </p>
+                                              <p class="work-date">{{ date2 }}</p>
+                                          </div>
+                                      </a>
+                                      </div>
+                                  {%endif %}
+                              </div>
+                              {% assign j = j | plus: step %}
+                          {% endif %}
+                      {% endfor %}
+                      <h2>Work Projects</h2>
+                      <p>I prefer not to refer to them as case studies, as these are informal and personal. I consider them as biographical notes of learning derived from my experiences in various job roles.</p>
+                      {% assign j = 0 %}
+                      {% for i in (0..work_projects.size) %}
+                          {% if j < work_projects.size %}
+                              {% assign idx1 = work_projects[j] | plus: 0 %}
+                              {% assign idx2 = j | plus: 0 | plus: 1 %}
+                              {% assign idx2 = work_projects[idx2] | plus: 0 %}
+                              {% assign project1 = projects_items[idx1] %}
+                              {% assign project2 = projects_items[idx2] %}
+                              <div class="work-div container-div">
+                                  {% assign image_src1 = './assets/img/' | append: project1.metacover | replace: '[[', '' | replace: ']]', ''  %} 
+                                  {% assign image_src2 = './assets/img/' | append: project2.metacover | replace: '[[', '' | replace: ']]', ''  %} 
+                                  {% assign title1 = project1.title %} 
+                                  {% assign title2 = project2.title %}
+                                  {% assign date1 = project1.duration %} 
+                                  {% assign date2 = project2.duration %}
+                                  <div class="work-row p-l">
+                                      <a href="{{site.baseurl}}{{project1.url}}">
+                                      <img src="{{ image_src1 }}" />
+                                      <div class="work-caption">
+                                          <p class="work-title">{{ title1 }}</p>
+                                          <p class="work-date">{{ date1 }}</p>
+                                      </div>
+                                      </a>
+                                  </div>
+                                  {% if idx1 != work_projects[work_projects.size()] - 1 and idx2 != 0 %}
+                                      <div class="work-row p-l">
+                                      <a href="{{site.baseurl}}{{project2.url}}">
+                                          <img src="{{ image_src2 }}" />
+                                          <div class="work-caption">
+                                              <p class="work-title">{{ title2 }} </p>
+                                              <p class="work-date">{{ date2 }}</p>
+                                          </div>
+                                          </a>
+                                      </div>
+                                  {%endif %}
+                              </div>
+                              {% assign j = j | plus: step %}
+                          {% endif %}
+                      {% endfor %}
+                      
+                      <h2>Identity and Branding</h2>
+                      <p>I prefer not to refer to them as case studies, as these are informal and personal. I consider them as biographical notes of learning derived from my experiences in various job roles.</p>
+                      
+                      {% assign j = 0 %}
+                      {% for i in (0..identity_branding.size) %}
+                          {% if j < identity_branding.size %}
+                              {% assign idx1 = identity_branding[j] | plus: 0 %}
+                              {% assign idx2 = j | plus: 0 | plus: 1 %}
+                              {% assign idx2 = identity_branding[idx2] | plus: 0 %}
+                      
+                              {% assign project1 = projects_items[idx1] %}
+                              {% assign project2 = projects_items[idx2] %}
+                              <div class="container-div project">
+                                  {% assign image_src1 = './assets/img/' | append: project1.metacover | replace: '[[', '' | replace: ']]', ''  %} 
+                                  {% assign image_src2 = './assets/img/' | append: project2.metacover | replace: '[[', '' | replace: ']]', ''  %} 
+                                  {% assign title1 = project1.title %} 
+                                  {% assign title2 = project2.title %}
+                                  {% assign date1 = project1.duration %} 
+                                  {% assign date2 = project2.duration %}
+                                  <div class="image-container">
+                      
+                                      <a href="{{site.baseurl}}{{project1.url}}">
+                                      <img class="image-project" src="{{ image_src1 }}" />
+                                      <div class="image-overlay p-s">
+                                          {{ title1 }}
+                                      </div>
+                                      </a>
+                                  </div>
+                      
+                                  {% if idx1 != identity_branding[identity_branding.size()] - 1 and idx2 != 0 %}
+                                      <div class="image-container">
+                                      <a href="{{site.baseurl}}{{project2.url}}">
+                                          <img class="image-project" src="{{ image_src2 }}" />
+                                          <div class="image-overlay p-s">
+                                              {{ title2 }}
+                                          </div>
+                                          </a>
+                                      </div>
+                                  {%endif %}
+                              </div>
+                              {% assign j = j | plus: step %}
+                          {% endif %}
+                      {% endfor %}
+                      
+                      {% endif %}
+                      
                     {% include Footer.html %}
                     </div>
             {%- endif -%}

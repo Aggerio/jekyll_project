@@ -35,10 +35,9 @@
 {%- if page.feedformat == "card" -%}
     {%- if site.preferences.search.enabled -%}
         <!-- search bar -->
-        <div class="search-container container-div">
+        <div class="block">
             <input class="input is-medium" type="text" placeholder="Search notes.." id="search-input" autocomplete="off">
             <div id="search-results" class="search-results"></div>
-            <button type="submit"><img src="{{site.baseurl}}/assets/img/search.png" alt="Search" /></button>
         </div>
         <script type="text/javascript" src="{{ site.baseurl }}/assets/js/vendor/lunr.min.js"></script>
         <script src="{{ site.baseurl }}/assets/js/Search.js"></script>

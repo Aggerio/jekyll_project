@@ -22,7 +22,7 @@ home page. * {%- endcomment -%}
   <script src="{{ site.baseurl }}/assets/js/Hamburger.js"></script>
   <div class="logo-div">
     <a href="{{site.baseurl}}/index.html">
-    <img src="{{ site.baseurl }}/assets/img/logo.png" class="header-item logo-img" width="50" height="50" />
+    <img src="{{ '/assets/img/logolight.png' | relative_url }}" class="header-item logo-img" id="theme-toggle-logo" width="50" height="50" />
     </a>
     <img
       src="{{site.baseurl}}/assets/img/Hamburger_icon.svg.png"
@@ -30,8 +30,21 @@ home page. * {%- endcomment -%}
       id="header-item"
     />
   </div>
+  <script>
+      window.onload = function () {
+        document
+          .querySelector(".hamburger")
+          .addEventListener("click", function () {
+            var menu = document.querySelector(".menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+              menu.style.display = "block";
+            } else {
+              menu.style.display = "none";
+            }
+          });
+      };
+  </script>
   <div class="menu">
-
     <a href="{{'/notes' | relative_url}}" class="header-item navbar-item p-s">
         <p class="header-item p-s">Notes</p>
     </a>

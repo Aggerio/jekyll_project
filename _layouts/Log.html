@@ -2,7 +2,7 @@
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -14,8 +14,10 @@
     <meta property="og:image" content="../assets/img/OGImg.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;700&family=Public+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
     {%- if page.title -%}
     <meta content="{{ page.title }}" property="og:title">
     <meta content="article" property="og:type">
@@ -41,7 +43,8 @@
     <![endif]-->
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
     <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
-    <script src="../assets/js/util.js" ></script>
+
+    <script src="{{ site.baseurl }}/assets/js/util.js" ></script>
 </head>
 
 <body >
