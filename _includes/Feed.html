@@ -35,7 +35,7 @@
 {%- if page.feedformat == "card" -%}
     {%- if site.preferences.search.enabled -%}
         <!-- search bar -->
-        <div class="block">
+        <div >
             <input class="input is-medium" type="text" placeholder="Search notes.." id="search-input" autocomplete="off">
             <div id="search-results" class="search-results"></div>
         </div>
@@ -49,7 +49,7 @@
         {%- if note_items.feed == "show" -%}
                 <div class="list-head-div">
                     <a href="{{ site.baseurl }}{{note_items.url}}">
-                        <h2 class="list-head">{{ note_items.title }}</h2>
+                        <div class="list-head">{{ note_items.title }}</div>
                         <!-- <p class="excerpt">
                             {{ note_items.content | strip_html | strip | remove: "[[" | remove: "]]" | remove: "-" | escape | truncate: 200 }}
                         </p> -->

@@ -88,6 +88,11 @@
             <div >
                 <h5 class="meta-title"><a href="/">← </a></h5>
                     <h2 class="paragraph-title">{{page.title}}</h2>
+                    {% assign filter_category = page.subcategory | replace: "[[", ""  | replace: "]]", ""   %}
+                    {% assign firstLetter = filter_category | slice: 0, 1 | upcase %}
+                    {% assign restOfString = filter_category | slice: 1, filter_category.size %}
+                    <p class="log-subcategory"> {{ firstLetter }}{{ restOfString }}</p>
+                    <p>Here's a compilation of books I've read. The ones marked with ✦ are must-reads, and those marked with ❷ are re-reads. Check my Antilibrary for the bigger list ;)</p>
                     <div class="paragraph">
                     {% include Content.html %}
                     </div>

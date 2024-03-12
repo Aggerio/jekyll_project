@@ -2,6 +2,7 @@
 <div class="list-div container-div">
 {% assign note_items = site.logs | sort: "date" | reverse %}
 {% assign previous_month_year = "" %}
+
 {% for note_item in note_items %}
 
     
@@ -15,6 +16,7 @@
                 <h2 class="list-head">
                     {{current_month_year}}
                 </h2>
+                
             </div>
             {% assign previous_month_year = current_month_year %}
         {% endif %}
