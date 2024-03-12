@@ -36,7 +36,7 @@ function modeSwitcher() {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
 
 // Get all "navbar-burger" elements
 const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
@@ -46,7 +46,6 @@ if ($navbarBurgers.length > 0) {
 // Add a click event on each of them
 $navbarBurgers.forEach( el => {
     el.addEventListener('click', () => {
-
     // Get the target from the "data-target" attribute
     const target = el.dataset.target;
     const $target = document.getElementById(target);
@@ -60,24 +59,28 @@ $navbarBurgers.forEach( el => {
 }
 
     var contentParagraph = document.getElementById("latest-notes");
-    var contentText = contentParagraph.innerHTML;
-    var elements = contentText.split(", ");
-    var wrappedContent = elements.map(function(element) {
-        return "<a href='#' class='connect-link p-l'>" + element + "</a>";
-    });
-    contentParagraph.innerHTML = wrappedContent.join(", ");
+    if(contentParagraph != null || contentParagraph != undefined)
+    {
+        var contentText = contentParagraph.innerHTML;
+        var elements = contentText.split(", ");
+        var wrappedContent = elements.map(function(element) {
+            return "<a href='#' class='connect-link p-l'>" + element + "</a>";
+        });
+        contentParagraph.innerHTML = wrappedContent.join(", ");
+    }
 
-
-    var contentParagraph = document.getElementById("log-collections");
-    var contentText = contentParagraph.innerHTML;
-    var elements = contentText.split(", ");
-    var wrappedContent = elements.map(function(element) {
-        return "<a href='#' class='connect-link p-l'>" + element + "</a>";
-    });
-    contentParagraph.innerHTML = wrappedContent.join(", ");
+    if(contentParagraph != null)
+    {
+        var contentParagraph = document.getElementById("log-collections");
+        var contentText = contentParagraph.innerHTML;
+        var elements = contentText.split(", ");
+        var wrappedContent = elements.map(function(element) {
+            return "<a href='#' class='connect-link p-l'>" + element + "</a>";
+        });
+        contentParagraph.innerHTML = wrappedContent.join(", ");
+    }
     
     let theme = sessionStorage.getItem('theme');
-    console.log("Got theme: ", theme);
     if (theme==="") {
         document.documentElement.setAttribute('data-theme', 'light');
         changeIconImgSrc(iconSun,iconLogoLight);
