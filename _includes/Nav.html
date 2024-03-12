@@ -20,7 +20,7 @@ home page. * {%- endcomment -%}
 <div class="header container-div">
   <div class="logo-div">
     <a href="{{site.baseurl}}/index.html">
-    <img src="./assets/img/logolight.png" class="header-item logo-img" id="theme-toggle-logo" height="25" />
+    <img src="{{ '/assets/img/logolight.png' | relative_url }}" class="header-item logo-img" id="theme-toggle-logo" width="25" height="25" />
     </a>
     <img
       src="{{site.baseurl}}/assets/img/Hamburger_icon.svg.png"
@@ -49,13 +49,13 @@ home page. * {%- endcomment -%}
     <a href="{{'/logs' | relative_url}}" class="header-item navbar-item p-s">
       <p class="header-item p-s">Logs</p>
     </a>
-    <a href="{{'/projects' | relative_url}}" class="header-item navbar-item p-s">
+    <a href="{{'/projects' | relative_url}}" class="header-item navbar-item">
       <p class="header-item p-s">Projects</p>
     </a>
     <a href="{{'/about' | relative_url }}" class="header-item navbar-item p-s">
     <p class="header-item p-s">About</p>
      </a>
-      <img src="./assets/img/sun.png" id="theme-toggle-img" onclick="modeSwitcher()"/>
+      <img src="{{ '/assets/img/sun.png' | relative_url }}" id="theme-toggle-img" onclick="modeSwitcher()"/>
   </div>
 </div>
 
