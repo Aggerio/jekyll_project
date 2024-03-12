@@ -353,6 +353,10 @@ body{
     color: var(--color-link);
     text-decoration-color: var(--color-link);
   }
+
+  .log-subcategory {
+    color: var(--color-dark);
+  }
   
   .tooltip {
     position: relative;
