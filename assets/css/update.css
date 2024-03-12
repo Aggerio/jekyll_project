@@ -18,7 +18,7 @@
     ---accent-50: #fa9e9e;
     ---grey-90: #617593;
     ---grey-60: #99a5b7;
-    ---grey-40: #1667e0;
+    ---grey-40: #BBC3CF;
     ---grey-05: #f7f8f9;
     ---grey-00: #fcfcfd;
   }
@@ -438,7 +438,7 @@ body{
     color: var(--color-dark);
   }
   .work-row img {
-    width: 100%;
+    max-width: 100%;
   }
 
   .work-caption {
