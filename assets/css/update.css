@@ -209,7 +209,7 @@ body{
     margin-right: 8px;
   }
   .header-item {
-    margin-right: 32px;
+    margin-right: 24px;
     color: var(--color-dark);
   }
   
@@ -1583,7 +1583,6 @@ body.has-navbar-fixed-bottom {
   color: var(--color-text-main);
   display: block;
   line-height: 1.5;
-  padding: 0.75rem;
   position: relative; }
   .navbar-item .icon:only-child,
   .navbar-link .icon:only-child {
