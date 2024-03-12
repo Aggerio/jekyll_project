@@ -1,7 +1,7 @@
-const iconSun = "/assets/img/sun.png";
-const iconMoon = "/assets/img/moon.svg";
-const iconLogoLight = "/assets/img/logolight.png";
-const iconLogoDark = "/assets/img/logodark.png";
+const iconSun = "./assets/img/sun.png";
+const iconMoon = "./assets/img/moon.svg";
+const iconLogoLight = "./assets/img/logolight.png";
+const iconLogoDark = "./assets/img/logodark.png";
 let systemInitiatedDark = window.matchMedia("(prefers-color-scheme: dark)"); 
 let theme = sessionStorage.getItem('theme');
 
