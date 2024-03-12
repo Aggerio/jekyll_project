@@ -298,6 +298,7 @@ body{
   
   .footer-div {
     padding-top:48px;
+    padding-bottom:48px;
     text-align: center;
   }
   .footer-text {
@@ -309,6 +310,11 @@ body{
     margin-left: auto;
     margin-right: auto;
   } */
+
+  .paragraph-div {
+    padding-top:56px;
+  }
+
   .paragraph-title {
     color: var(--color-dark);
   }
@@ -394,6 +400,7 @@ body{
   .connect-div {
     display: flex;
     gap: 24px;
+    padding-top:56px ;
   }
   .connect-row {
     flex-grow: 1;
@@ -436,6 +443,12 @@ body{
 
   /* Media query for desktop */
   @media only screen and (max-width: 768px) {
+    .work-row img {
+      width: 50%;
+    }
+  }
+  /* Media query for desktop */
+  @media only screen and (min-width: 768px) {
     .work-row img {
       width: 100%;
     }
@@ -563,7 +576,7 @@ body{
   .hamburger {
     display: none;
     width: 25px; 
-    height:auto;
+    /* height:auto; */
   }
   
   .menu {
