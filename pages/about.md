@@ -4,8 +4,6 @@ title: About
 feedformat: about
 permalink: /about
 ---
-<br />
-
 I’m a maker, product designer, and design mentor currently living in Bangalore, India. With over fourteen years of experience in designing type, product, brand, and strategies, I like to use design to solve problems that focuses on user needs, business success, and the possibilities of technology.
 <br/>
 <br/>
