@@ -73,19 +73,8 @@
 <h2>Work Projects</h2>
 <p>I prefer not to refer to them as case studies, as these are informal and personal. I consider them as biographical notes of learning derived from my experiences in various job roles.</p>
 {% assign j = 0 %}
-{% assign screenWidthScript = '
-<script>
-  var screenWidth = window.innerWidth || document.documentElement.clientWidth;
-  document.write(screenWidth);
-</script>
-' %}
 
-{{ screenWidthScript | strip_html }}
-{% assign card_width = '100%' %}
-
-{%if screenWidthScript >= 768 %}
-    {% assign card_width = '50%' %}
-{%endif}
+<h1> screenwidth:  {{screenWidthScript}}</h1>
 {% for i in (0..work_projects.size) %}
     {% if j < work_projects.size %}
         {% assign idx1 = work_projects[j] | plus: 0 %}
