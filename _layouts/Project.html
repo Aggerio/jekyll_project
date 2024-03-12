@@ -1,90 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
+<head>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Hiran Venugopalan" property="og:site_name" />
     <meta
-      content="Product and Type Designer | UI UX | Design Mentoring"
-      property="og:description"
-    />
-    <meta content="{{ site.url }}/about/" property="article:author" />
-    <meta property="og:image" content="../assets/img/OGImg.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        content="Product and Type Designer | UI UX | Design Mentoring"
+        property="og:description">
+    <meta content="{{ site.url }}/about/" property="article:author">
+    <meta property="og:image" content="../assets/img/OGImg.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300;400;700&family=Public+Sans:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     {%- if page.title -%}
-    <meta content="{{ page.title }}" property="og:title" />
-    <meta content="article" property="og:type" />
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url" />
+    <meta content="{{ page.title }}" property="og:title">
+    <meta content="article" property="og:type">
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {%- else -%}
-    <meta content="website" property="og:type" />
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url" />
+    <meta content="website" property="og:type">
+    <meta content="{{ site.url }}{{ page.url }}" property="og:url">
     {%- endif -%}
 
-      <title>{{page.title}} - {{site.heading}}</title>
-    <script
-      data-host="https://microanalytics.io"
-      data-dnt="false"
-      src="https://microanalytics.io/js/script.js"
-      id="ZwSg9rf6GA"
-      async
-      defer
-    ></script>
+    <title>{{page.title}} - {{site.heading}}</title>
+    <script data-host="https://microanalytics.io" data-dnt="false" src="https://microanalytics.io/js/script.js" id="ZwSg9rf6GA" async defer></script>
     <link rel="canonical" href="{{site.url}}{{page.url}}" />
-    <!-- <link
-      rel="apple-touch-icon"
-      href="{{site.baseurl}}/assets/img/profile.png"
-    /> -->
-    <!-- <link
-      rel="icon"
-      href="{{site.baseurl}}/assets/img/favicon.png"
-      type="image/png"
-      sizes="16x16"
-    /> -->
-    <!-- <link
-      href="{{site.baseurl}}/assets/css/style.css"
-      rel="stylesheet"
-      media="all"
-      class="default"
-    /> -->
-    <!-- <link
-      href="{{site.baseurl}}/assets/css/main.css"
-      rel="stylesheet"
-      media="all"
-      class="default"
-    /> -->
-    <!-- <link
-      href="{{site.baseurl}}/assets/css/Util.css"
-      rel="stylesheet"
-      media="all"
-      class="default"
-    /> -->
-    <link
-      href="{{site.baseurl}}/assets/css/update.css"
-      rel="stylesheet"
-      media="all"
-      class="default"
-    />
-    <!-- <link
-      href="{{site.baseurl}}/assets/css/vendor/Katex.css"
-      rel="stylesheet"
-      media="all"
-      class="default"
-    /> -->
+    <link rel="apple-touch-icon" href="./assets/img/profile.png">
+    <link rel="icon" href="./assets/img/favicon.png" type="image/png" sizes="16x16" />
+    <!-- <link href="{{site.baseurl}}/assets/css/style.css" rel="stylesheet" media="all" class="default" /> 
+    <link href="{{site.baseurl}}/assets/css/main.css" rel="stylesheet" media="all" class="default" />  
+    <link href="{{site.baseurl}}/assets/css/Util.css" rel="stylesheet" media="all" class="default" /> -->
+    <link href="{{site.baseurl}}/assets/css/update.css" rel="stylesheet" media="all" class="default" />
+    <!-- <link href="{{site.baseurl}}/assets/css/vendor/Katex.css" rel="stylesheet" media="all" class="default" /> -->
 
     <!-- [if IE]>
         <link href="/assets/css/ie-target.css" rel="stylesheet" type="text/css"/>
     <![endif]-->
     <!--<link href="/assets/css/prism.css" rel="stylesheet" />-->
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      href="{{ site.url }}/feed.xml"
-    />
-  </head>
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml">
+
+    <script src="{{ site.baseurl }}/assets/js/Hamburger.js" ></script>
+    <script src="{{ site.baseurl }}/assets/js/util.js" ></script>
+</head>
 
   <body>
     <main class="container">
@@ -122,10 +80,10 @@
                           {% endif %}
                       {% endfor %}
                       
-                      {% assign worked_on = worked_on | |  split: ',' %}
+                      {% assign worked_on = worked_on  |  split: ',' %}
                       {% assign identity_branding = identity_branding | split: ',' %}
                       {% assign work_projects = work_projects | split: ',' %}
-                      
+                      -
                       {% assign step = 2 %}
                       {% assign j = 0 %}
                       
@@ -153,7 +111,8 @@
                                           </div>
                                       </a>
                                   </div>
-                                  {% if idx1 != worked_on[worked_on.size()] - 1 and idx2 != 0 %}
+                                  {% assign size = worked_on.size()%}
+                                  {% if idx1 != worked_on[size] - 1 and idx2 != 0 %}
                                       <div class="work-row p-l">
                                       <a href="{{site.baseurl}}{{project2.url}}">
                                           <img src="{{ image_src2 }}" />
