@@ -86,7 +86,7 @@
                 <!--- Logs Subcategory Layout-->
             {%- if page.subcategory -%}
             <div >
-                <h5 class="meta-title"><a href="/">← </a></h5>
+                <h5 class="meta-title"><a href="/logs">← </a></h5>
                     <h2 class="paragraph-title">{{page.title}}</h2>
                     {% assign filter_category = page.subcategory | replace: "[[", ""  | replace: "]]", ""   %}
                     {% assign firstLetter = filter_category | slice: 0, 1 | upcase %}

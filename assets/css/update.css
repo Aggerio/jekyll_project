@@ -190,6 +190,26 @@ body{
   .list-title {
     margin: 0;
   }
+
+  .list-arrow {
+    opacity: 0;
+    padding: 0px;
+    margin: 0px;
+    padding-left:5px;
+  }
+
+  .list-hover-div {
+    display: flex;
+  }
+
+  .list-hover-div:hover .list-title {
+    color: var(--color-link);
+  }
+
+  .list-hover-div:hover .list-arrow {
+    color: var(--color-link);
+    opacity: 1;
+  }
   
   .list-date {
     margin: 0;

@@ -1,52 +1,51 @@
 <span class="latest-notes p-l">
-Here's a compilation of books I've read. The ones marked with ♦ are must-reads, and those marked with 0 are re-reads. Check my Antilibrary for the bigger list ;) 
-<br />
-<br />
-<a href="./log/library" class="connect-link">Library</a>,
-<a href="./log/antilibrary" class="connect-link">AntiLibrary</a>,
-<a href="./log/movies" class="connect-link">Movies</a>,
-<a href="./log/series" class="connect-link">Series</a>, 
-<a href="./log/podcasts" class="connect-link">Podcasts</a>,
-<a href="./log/music" class="connect-link">Music</a>,    
-<a href="./log/travel" class="connect-link">Travel</a>,  
-<a href="./log/photography" class="connect-link">Photography</a>,
-<a href="./log/recipe" class="connect-link">Recipe</a>, 
-<a href="./log/coffee" class="connect-link">Coffee</a>, 
-<a href="./log/webfound" class="connect-link">WebFound</a>,
-<a href="./log/softwares" class="connect-link">Softwares</a>,
-<a href="./log/using" class="connect-link">Using</a>,    
-<a href="./log/figma-plugins" class="connect-link">Figma Plugins</a>,
-<a href="./log/tinyhouses" class="connect-link">TinyHouses</a>,
-<a href="./log/designers" class="connect-link">Designers  </a>
-</span> 
+  Here's a compilation of books I've read. The ones marked with ♦ are
+  must-reads, and those marked with 0 are re-reads. Check my Antilibrary for the
+  bigger list ;)
+  <br />
+  <br />
+  <a href="./log/library" class="connect-link">Library</a>,
+  <a href="./log/antilibrary" class="connect-link">AntiLibrary</a>,
+  <a href="./log/movies" class="connect-link">Movies</a>,
+  <a href="./log/series" class="connect-link">Series</a>,
+  <a href="./log/podcasts" class="connect-link">Podcasts</a>,
+  <a href="./log/music" class="connect-link">Music</a>,
+  <a href="./log/travel" class="connect-link">Travel</a>,
+  <a href="./log/photography" class="connect-link">Photography</a>,
+  <a href="./log/recipe" class="connect-link">Recipe</a>,
+  <a href="./log/coffee" class="connect-link">Coffee</a>,
+  <a href="./log/webfound" class="connect-link">WebFound</a>,
+  <a href="./log/softwares" class="connect-link">Softwares</a>,
+  <a href="./log/using" class="connect-link">Using</a>,
+  <a href="./log/figma-plugins" class="connect-link">Figma Plugins</a>,
+  <a href="./log/tinyhouses" class="connect-link">TinyHouses</a>,
+  <a href="./log/designers" class="connect-link">Designers </a>
+</span>
 
 <br />
 
 {%- if page.feedformat == "card" -%}
-    <div class="list-div container-div">
-    {% assign note_items = site.logs | sort: "date" | reverse %}
-    {% assign previous_month_year = "" %}
-    {% for note_item in note_items %}
-        
-        {%- if note_item.feed == "show" -%}
-        {% assign current_month_year = note_item.date | date: "%B %Y" %}
-        {% if current_month_year != previous_month_year %}
-            <div class="list-head-div">
-                <h2 class="list-head">
-                    {{current_month_year}}
-                </h2>
-            </div>
-            {% assign previous_month_year = current_month_year %}
-        {% endif %}
-            <a href="{{ site.baseurl }}{{ note_item.url }}">
-                <div class="list-components p-s">
-                    <p class="list-title">
-                        {{ note_item.title }}
-                    </p>
-                    <p class="list-date">{{note_item['category'] | replace: '[[', '' | replace: ']]', '' | replace: '"','' }}</p>
-                </div>
-            </a>
-        {%- endif -%}
-    {%- endfor -%}
+<div class="list-div container-div">
+  {% assign note_items = site.logs | sort: "date" | reverse %} {% assign
+  previous_month_year = "" %} {% for note_item in note_items %} {%- if
+  note_item.feed == "show" -%} {% assign current_month_year = note_item.date |
+  date: "%B %Y" %} {% if current_month_year != previous_month_year %}
+  <div class="list-head-div">
+    <h2 class="list-head">{{current_month_year}}</h2>
+  </div>
+  {% assign previous_month_year = current_month_year %} {% endif %}
+  <a href="{{ site.baseurl }}{{ note_item.url }}">
+    <div class="list-components p-s">
+      <div class="list-hover-div">
+        <p class="list-title">{{ note_item.title }}</p>
+        <p class="list-arrow">→</p>
+      </div>
+      <p class="list-date">
+        {{note_item['category'] | replace: '[[', '' | replace: ']]', '' |
+        replace: '"','' }}
+      </p>
     </div>
+  </a>
+  {%- endif -%} {%- endfor -%}
+</div>
 {%- endif -%}
