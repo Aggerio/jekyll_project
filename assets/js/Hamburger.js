@@ -1,13 +1,7 @@
-let siteUrl = window.location.href;
-let siteBaseUrl = '';
-if(siteUrl.split('.')[1] =='github')
-{
-    siteBaseUrl = '/' + siteUrl.split('/')[1];
-}
-const iconSun = siteBaseUrl + "./assets/img/sun.png";
-const iconMoon = siteBaseUrl + "./assets/img/moon.svg";
-const iconLogoLight = siteBaseUrl + "./assets/img/logolight.png";
-const iconLogoDark = siteBaseUrl + "./assets/img/logodark.png";
+const iconSun =  "./assets/img/sun.png";
+const iconMoon =  "./assets/img/moon.svg";
+const iconLogoLight =  "./assets/img/logolight.png";
+const iconLogoDark =  "./assets/img/logodark.png";
 let systemInitiatedDark = window.matchMedia("(prefers-color-scheme: dark)"); 
 let theme = sessionStorage.getItem('theme');
 
